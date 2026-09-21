@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ua">
+    <head>
+        <meta charset="UTF-8">
+        <title>Логін форма</title>
+
+        <meta name="color-scheme" content="light dark">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" href="data:,">
+        <link rel="stylesheet" href="style.css">
+
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="main">
+            <h1 class="animation animation_fast" data-animation>Вхід</h1>
+
+            <form class="main__form" method="get" name="form">
+                <fieldset class="animation animation_medium" data-animation>
+                    <legend>Введіть свої персональні дані</legend>
+
+                    <div>
+                        <label>
+                            <span>Ім'я:</span>
+                            <input type="text" placeholder="Напр. Тарас" name="first-name" autocomplete="off" required>
+                        </label>
+
+                        <label>
+                            <span>Призвіще:</span>
+                            <input type="text" placeholder="Напр. Шевченко" name="last-name" autocomplete="off" required>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <span>Е-адреса:</span>
+                            <input type="email" placeholder="Напр. bulba@gmail.com" name="email" autocomplete="off" required>
+                        </label>
+
+                        <label>
+                            <span>Пароль:</span>
+                            <input type="password" placeholder="Напр. 123456ТШ" name="password" autocomplete="off" required>
+                        </label>
+                    </div>
+
+                    <label class="main__label">
+                        <input type="checkbox" data-show-password="password">
+                        <span>Show password</span>
+                    </label>
+                </fieldset>                
+
+                <div class="main__actions animation animation_long" data-animation>
+                    <button type="reset">Скинути</button>
+                    <button class="button">Увійти</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
