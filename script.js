@@ -30,3 +30,12 @@ const observer = new IntersectionObserver((entries) => {
 
 for (const element of document.body.querySelectorAll('[data-animation]'))
     observer.observe(element);
+
+// Form
+const form = document.body.querySelector('form');
+const firstName = form.querySelector('[data-form-firstname]');
+const lastName = form.querySelector('[data-form-lastname]');
+
+form.addEventListener('submit', () => {
+    window.alert(`Form submited for: '${firstName.value}, ${lastName.value}'`);
+})
