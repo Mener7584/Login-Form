@@ -96,13 +96,32 @@ fieldset > div > * {
 
 label {
     display: inline grid;
+    height: fit-content;
     gap: 0.5em;
+
+    & > div {
+        display: inline grid;
+        gap: 0.5rem;
+    }
 }
 
 legend {
     font-size: 0.9375em;
     color: var(--border);
     padding-inline: 0.5em;
+}
+
+[data-form-invalid] {
+    &:not([hidden]) {
+        display: inline flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+
+    font-size: 0.75rem;
+    padding: 0.4em;
+    border-radius: 0.3125em;
+    border: 0.125em solid var(--border-dark);
 }
 
 /* Form controls */
@@ -123,6 +142,14 @@ legend {
 :where(button, input):disabled {
     opacity: 0.7;
     filter: grayscale(0.4);
+}
+
+input:not([type="checkbox"]):invalid {
+    border-color: var(--error);
+}
+
+input:not([type="checkbox"]):valid {
+    border-color: var(--accent);
 }
 
 :where(button:enabled, input:enabled):hover,

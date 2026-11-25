@@ -17,43 +17,73 @@
         <div class="main">
             <h1 class="animation animation_fast" data-animation>Вхід</h1>
 
-            <form class="main__form" method="get" name="form">
+            <form class="main__form" method="post" name="form">
                 <fieldset class="animation animation_medium" data-animation>
-                    <legend>Введіть свої персональні дані</legend>
+                    <legend>Коряченко Денис Вікторович</legend>
 
                     <div>
                         <label>
                             <span>Ім'я:</span>
-                            <input type="text" placeholder="Напр. Тарас" name="first-name" autocomplete="off" required>
+                            <div>
+                                <input type="text" placeholder="Напр. Тарас" name="first-name" autocomplete="off" pattern="^[A-ZА-ЯІЇЄҐ][A-Za-zА-Яа-яіІїЇєЄґҐ]*$" data-form-firstname required>
+
+                                <strong hidden data-form-invalid>
+                                    <span>Перша літера має бути великою.</span>
+                                    <span>Дозволені лише українські або англійські літери.</span>
+                                </strong>
+                            </div>
                         </label>
 
                         <label>
                             <span>Прізвище:</span>
-                            <input type="text" placeholder="Напр. Шевченко" name="last-name" autocomplete="off" required>
+                            <div>
+                                <input type="text" placeholder="Напр. Шевченко" name="last-name" autocomplete="off" pattern="^[A-ZА-ЯІЇЄҐ][A-Za-zА-Яа-яіІїЇєЄґҐ]*$" data-form-lastname required>
+
+                                <strong hidden data-form-invalid>
+                                    <span>Перша літера має бути великою.</span>
+                                    <span>Дозволені лише українські або англійські літери.</span>
+                                </strong>
+                            </div>
                         </label>
                     </div>
 
                     <div>
                         <label>
                             <span>Е-адреса:</span>
-                            <input type="email" placeholder="Напр. bulba@gmail.com" name="email" autocomplete="off" required>
+                            <div>
+                                <input type="email" placeholder="Напр. bulba@gmail.com" name="email" autocomplete="off" data-form-email required>
+
+                                <strong hidden data-form-invalid>
+                                    <span>Невалідний формат E-mail.</span>
+                                </strong>
+                            </div>
                         </label>
 
                         <label>
                             <span>Пароль:</span>
-                            <input type="password" placeholder="Напр. 123456ТШ" name="password" autocomplete="off" required>
+                            <div>
+                                <input type="password" placeholder="Напр. 123456ТШ" name="password" autocomplete="off" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$" data-form-password required>
+
+                                <strong hidden data-form-invalid>
+                                    <span>Мінімум 8 символів.</span>
+                                    <span>Щонайменше одна велка літера.</span>
+                                    <span>Щонайменше одна маленька літера.</span>
+                                    <span>Щонайменше одна цифра.</span>
+                                    <span>Щонайменше один спецсимвол.</span>
+                                </strong>
+                            </div>
                         </label>
                     </div>
 
                     <label class="main__label">
                         <input type="checkbox" data-show-password="password">
-                        <span>Show password</span>
+                        <span>Показати пароль</span>
                     </label>
-                </fieldset>                
+                </fieldset>
 
                 <div class="main__actions animation animation_long" data-animation>
                     <button type="reset">Скинути</button>
-                    <button class="button">Увійти</button>
+                    <button class="button" disabled data-form-submit>Увійти</button>
                 </div>
             </form>
         </div>
